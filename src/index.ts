@@ -78,8 +78,6 @@ const cleanExit = async (message?: string | Error, exit?: boolean) => {
     }
   }
 };
-process.on("SIGINT", () => cleanExit());
-process.on("SIGTERM", () => cleanExit());
 
 const handleSpawn = (debug: boolean, fileName: string, port: number) => {
   child = spawn(path.join(`"${__dirname}"`, fileName), {
